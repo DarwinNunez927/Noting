@@ -1,85 +1,207 @@
-<!DOCTYPE html>
+html<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smokey's Barbershop | Premium Cuts</title>
+    <title>Just-In A Snip | Lawn Mowing & Pressure Cleaning</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: #111; color: #fff; }
-        
-        /* Navigation */
-        nav { background: #0a0a0a; padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #c5a880; }
-        nav h1 { color: #c5a880; font-size: 24px; letter-spacing: 2px; }
-        nav ul { display: flex; list-style: none; gap: 20px; }
-        nav ul li a { color: #fff; text-decoration: none; font-weight: bold; }
-
-        /* Hero Section */
-        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://unsplash.com') center/cover; text-align: center; padding: 120px 20px; }
-        .hero h2 { font-size: 42px; color: #c5a880; margin-bottom: 10px; text-transform: uppercase; }
-        .hero p { font-size: 18px; margin-bottom: 30px; color: #ccc; }
-        .cta-btn { background: #c5a880; color: #111; padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 18px; display: inline-block; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
-        .cta-btn:hover { background: #fff; }
-
-        /* Services Section */
-        .services { padding: 60px 20px; text-align: center; max-width: 800px; margin: 0 auto; }
-        .services h3 { font-size: 32px; margin-bottom: 40px; color: #c5a880; text-transform: uppercase; }
-        .price-list { display: flex; flex-direction: column; gap: 15px; }
-        .price-item { display: flex; justify-content: space-between; border-bottom: 1px dashed #444; padding-bottom: 10px; font-size: 18px; }
-        .price-name { color: #fff; }
-        .price-cost { color: #c5a880; font-weight: bold; }
-
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        body {
+            background-color: #fcfcfc;
+            color: #333333;
+        }
+        /* Top Navigation */
+        nav {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: #27ae60;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: #2c3e50;
+        }
+        .nav-phone {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /* Hero Header */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)), url('https://unsplash.com') no-repeat center center/cover;
+            padding: 100px 20px;
+            color: white;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            color: #f0f0f0;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .call-btn {
+            background-color: #27ae60;
+            color: white;
+            text-decoration: none;
+            padding: 18px 40px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+            transition: 0.2s;
+        }
+        .call-btn:hover {
+            background-color: #219653;
+            transform: translateY(-2px);
+        }
+        /* Services Layout */
+        .services-container {
+            padding: 70px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .services-container h2 {
+            text-align: center;
+            margin-bottom: 45px;
+            font-size: 2.2rem;
+            color: #2c3e50;
+        }
+        .service-row {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border: 1px solid #eaeaea;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .service-text h3 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 6px;
+        }
+        .service-text p {
+            color: #666666;
+            font-size: 1rem;
+        }
+        .badge {
+            background-color: #e8f8f0;
+            color: #27ae60;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        /* Trust / Review Section */
+        .review-banner {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .review-banner p {
+            font-size: 1.2rem;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto 10px auto;
+        }
+        .stars {
+            color: #f1c40f;
+            font-size: 1.3rem;
+        }
         /* Footer */
-        footer { background: #0a0a0a; color: #888; text-align: center; padding: 40px 20px; margin-top: 40px; border-top: 1px solid #222; }
-        footer p { margin-bottom: 10px; }
+        footer {
+            background-color: #1a1a1a;
+            color: #777777;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 4px solid #27ae60;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- Sticky Navigation -->
     <nav>
-        <h1>💈 SMOKEY'S BARBERSHOP</h1>
-        <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#hours">Hours</a></li>
-        </ul>
+        <div class="logo">JUST-IN <span>A SNIP</span></div>
+        <a href="tel:0420293764" class="nav-phone">📞 Call Justin</a>
     </nav>
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <h2>Look Sharp. Feel Confident.</h2>
-        <p>Premium haircuts, beard trims, and traditional hot towel shaves.</p>
-        <a href="https://square.site" target="_blank" class="cta-btn">📅 Book Appointment Now</a>
-    </div>
+    <!-- Visual Hero Area -->
+    <header>
+        <h1>JUST-IN A SNIP</h1>
+        <p>Premium Lawn Maintenance & Heavy Duty High-Pressure Surface Cleaning Services.</p>
+        <a href="tel:0420293764" class="call-btn">📞 Tap to Call Justin for a Quote</a>
+    </header>
 
-    <!-- Services & Prices Section -->
-    <div class="services" id="services">
-        <h3>Menu & Pricing</h3>
-        <div class="price-list">
-            <div class="price-item">
-                <span class="price-name">Standard Haircut & Style</span>
-                <span class="price-cost">$35.00</span>
+    <!-- Services Highlight Menu -->
+    <section class="services-container">
+        <h2>What We Do Best</h2>
+        
+        <div class="service-row">
+            <div class="service-text">
+                <h3>✂️ Precision Lawn Mowing</h3>
+                <p>Flawless mowing, tight edge trimming, and full site blowing maintenance.</p>
             </div>
-            <div class="price-item">
-                <span class="price-name">Skin Fade / Taper</span>
-                <span class="price-cost">$40.00</span>
-            </div>
-            <div class="price-item">
-                <span class="price-name">Beard Trim & Line Up</span>
-                <span class="price-cost">$20.00</span>
-            </div>
-            <div class="price-item">
-                <span class="price-name">The Full Package (Cut + Beard + Wash)</span>
-                <span class="price-cost">$60.00</span>
-            </div>
+            <div class="badge">Free Quote</div>
         </div>
-    </div>
 
-    <!-- Footer Section -->
-    <footer id="hours">
-        <p>📍 Your Local Street, Your Town</p>
-        <p>⏰ Mon - Fri: 9am - 6pm | Sat: 8am - 4pm | Sun: Closed</p>
-        <p>&copy; 2026 Smokey's Barbershop. Built by Darwin Web Designs.</p>
+        <div class="service-row">
+            <div class="service-text">
+                <h3>💦 High-Pressure Cleaning</h3>
+                <p>Blasting away oil, mould, and deep stains from driveways, patios, and pavers.</p>
+            </div>
+            <div class="badge">Top Rated</div>
+        </div>
+
+        <div class="service-row">
+            <div class="service-text">
+                <h3>🌿 Garden Maintenance</h3>
+                <p>Expert hedge shaping, pruning, weed control, and general yard tidying.</p>
+            </div>
+            <div class="badge">Insured</div>
+        </div>
+    </section>
+
+    <!-- Social Proof Highlight -->
+    <section class="review-banner">
+        <p>"Justin always turns up on time and leaves the yard looking absolutely schmick. Best service in the local area."</p>
+        <div class="stars">⭐⭐⭐⭐⭐ Top Google Rated Local Service</div>
+    </section>
+
+    <!-- Store Info Footer -->
+    <footer>
+        <p>📍 Operating Services Across Local Suburbs</p>
+        <p>⏰ Open 7:00 AM - 9:00 PM | Mon - Sun</p>
+        <p style="margin-top: 20px; font-size: 0.8rem;">Concept Layout Designed by Your Name.</p>
     </footer>
 
 </body>
