@@ -1,207 +1,240 @@
-html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Just-In A Snip | Lawn Mowing & Pressure Cleaning</title>
+    <title>Just-In A Snip | Elite Property Maintenance</title>
+    <!-- Imports the ultra-clean Inter font used by premium modern apps -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
         body {
-            background-color: #fcfcfc;
-            color: #333333;
+            background-color: #0d1117; /* Luxury deep dark background */
+            color: #ffffff;
         }
-        /* Top Navigation */
+        /* Glassmorphism Navigation Bar */
         nav {
-            background-color: #ffffff;
-            padding: 15px 20px;
+            background-color: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(15px);
+            padding: 20px 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             position: sticky;
             top: 0;
             z-index: 100;
         }
         .logo {
-            font-weight: 800;
-            font-size: 1.3rem;
-            color: #27ae60;
-            letter-spacing: -0.5px;
+            font-weight: 900;
+            font-size: 1.4rem;
+            letter-spacing: -1px;
         }
         .logo span {
-            color: #2c3e50;
+            color: #2ece71; /* Vibrant Lawn Green */
         }
         .nav-phone {
-            color: #333;
+            color: #2ece71;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            background: rgba(46, 204, 113, 0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(46, 204, 113, 0.2);
+            font-size: 0.9rem;
+            transition: 0.2s;
         }
-        /* Hero Header */
+        .nav-phone:hover {
+            background: rgba(46, 204, 113, 0.2);
+        }
+        /* Epic High-Def Hero Banner */
         header {
-            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)), url('https://unsplash.com') no-repeat center center/cover;
-            padding: 100px 20px;
-            color: white;
+            background: linear-gradient(180deg, rgba(13,17,23,0.2) 0%, #0d1117 100%), url('https://unsplash.com') no-repeat center center/cover;
+            padding: 140px 6% 100px 6%;
             text-align: center;
         }
         header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
+            font-size: 3.8rem;
             font-weight: 900;
-            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            line-height: 1.1;
         }
         header p {
-            font-size: 1.2rem;
-            margin-bottom: 35px;
-            color: #f0f0f0;
+            font-size: 1.25rem;
+            color: #8b9bb4;
             max-width: 650px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
         }
+        /* Premium Floating Call-to-Action Button */
         .call-btn {
-            background-color: #27ae60;
-            color: white;
+            background-color: #2ece71;
+            color: #0d1117;
             text-decoration: none;
-            padding: 18px 40px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            border-radius: 50px;
+            padding: 22px 45px;
+            font-weight: 900;
+            font-size: 1.25rem;
+            border-radius: 14px;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
-            transition: 0.2s;
+            box-shadow: 0 12px 35px rgba(46, 204, 113, 0.35);
+            transition: 0.2.5s;
         }
         .call-btn:hover {
-            background-color: #219653;
-            transform: translateY(-2px);
+            background-color: #27ae60;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(46, 204, 113, 0.5);
         }
-        /* Services Layout */
-        .services-container {
-            padding: 70px 20px;
-            max-width: 900px;
+        /* Clean Image & Text Grid Layout */
+        .services-section {
+            padding: 80px 6%;
+            max-width: 1200px;
             margin: 0 auto;
         }
-        .services-container h2 {
+        .services-section h2 {
             text-align: center;
-            margin-bottom: 45px;
-            font-size: 2.2rem;
-            color: #2c3e50;
+            font-size: 2.6rem;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            margin-bottom: 60px;
         }
-        .service-row {
-            background: white;
-            padding: 30px;
-            margin-bottom: 20px;
-            border-radius: 12px;
-            border: 1px solid #eaeaea;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 35px;
         }
-        .service-text h3 {
-            color: #2c3e50;
-            font-size: 1.4rem;
-            margin-bottom: 6px;
-        }
-        .service-text p {
-            color: #666666;
-            font-size: 1rem;
-        }
-        .badge {
-            background-color: #e8f8f0;
-            color: #27ae60;
-            padding: 8px 16px;
+        .card {
+            background-color: #161b22;
             border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            white-space: nowrap;
+            overflow: hidden; /* Keeps image corners rounded */
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
-        /* Trust / Review Section */
-        .review-banner {
-            background-color: #2c3e50;
-            color: white;
-            padding: 40px 20px;
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(46, 204, 113, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .card-img {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .card-content {
+            padding: 35px;
+        }
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .card p {
+            color: #8b9bb4;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        /* Clean Social Proof Banner */
+        .trust-box {
+            background: radial-gradient(circle at top left, #161b22, #0d1117);
+            padding: 70px 6%;
             text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
-        .review-banner p {
-            font-size: 1.2rem;
+        .trust-box p {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #f0f6fc;
+            max-width: 850px;
+            margin: 0 auto 20px auto;
+            line-height: 1.5;
             font-style: italic;
-            max-width: 700px;
-            margin: 0 auto 10px auto;
         }
         .stars {
-            color: #f1c40f;
+            color: #ffc107;
             font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 3px;
         }
-        /* Footer */
+        /* Footer Details */
         footer {
-            background-color: #1a1a1a;
-            color: #777777;
-            padding: 40px 20px;
+            padding: 60px 6%;
             text-align: center;
+            color: #484f58;
             font-size: 0.9rem;
-            border-top: 4px solid #27ae60;
         }
     </style>
 </head>
 <body>
 
-    <!-- Sticky Navigation -->
+    <!-- Top Sticky Nav -->
     <nav>
         <div class="logo">JUST-IN <span>A SNIP</span></div>
         <a href="tel:0420293764" class="nav-phone">📞 Call Justin</a>
     </nav>
 
-    <!-- Visual Hero Area -->
+    <!-- Hero Banner -->
     <header>
         <h1>JUST-IN A SNIP</h1>
-        <p>Premium Lawn Maintenance & Heavy Duty High-Pressure Surface Cleaning Services.</p>
-        <a href="tel:0420293764" class="call-btn">📞 Tap to Call Justin for a Quote</a>
+        <p>Premium local lawn maintenance and commercial-grade high pressure surface cleaning. Engineered for pristine, five-star results.</p>
+        <a href="tel:0420293764" class="call-btn">Tap to Call Justin for a Quote</a>
     </header>
 
-    <!-- Services Highlight Menu -->
-    <section class="services-container">
-        <h2>What We Do Best</h2>
-        
-        <div class="service-row">
-            <div class="service-text">
-                <h3>✂️ Precision Lawn Mowing</h3>
-                <p>Flawless mowing, tight edge trimming, and full site blowing maintenance.</p>
+    <!-- Services Grid Layout with Real High-Res Photos -->
+    <section class="services-section">
+        <h2>Professional Solutions</h2>
+        <div class="grid">
+            
+            <!-- Card 1: Lawn Mowing -->
+            <div class="card">
+                <img src="https://unsplash.com" alt="Fresh cut lawn" class="card-img">
+                <div class="card-content">
+                    <h3>Precision Lawn Mowing</h3>
+                    <p>Flawless, laser-leveled mowing, pristine edging, and full driveway blower cleanups to keep your property looking sharp.</p>
+                </div>
             </div>
-            <div class="badge">Free Quote</div>
-        </div>
 
-        <div class="service-row">
-            <div class="service-text">
-                <h3>💦 High-Pressure Cleaning</h3>
-                <p>Blasting away oil, mould, and deep stains from driveways, patios, and pavers.</p>
+            <!-- Card 2: Pressure Cleaning -->
+            <div class="card">
+                <img src="https://unsplash.com" alt="Pressure washing concrete" class="card-img">
+                <div class="card-content">
+                    <h3>High-Pressure Wash</h3>
+                    <p>Heavy-duty deep blasting to remove oil slicks, slippery green moss, mould, and dark grime from concrete driveways and back patios.</p>
+                </div>
             </div>
-            <div class="badge">Top Rated</div>
-        </div>
 
-        <div class="service-row">
-            <div class="service-text">
-                <h3>🌿 Garden Maintenance</h3>
-                <p>Expert hedge shaping, pruning, weed control, and general yard tidying.</p>
+            <!-- Card 3: Garden Maintenance -->
+            <div class="card">
+                <img src="https://unsplash.com" alt="Hedge trimming" class="card-img">
+                <div class="card-content">
+                    <h3>Garden Maintenance</h3>
+                    <p>Complete hedge shaping, plant pruning, weed spraying, and general yard detailing to restore overgrown properties back to life.</p>
+                </div>
             </div>
-            <div class="badge">Insured</div>
+
         </div>
     </section>
 
-    <!-- Social Proof Highlight -->
-    <section class="review-banner">
-        <p>"Justin always turns up on time and leaves the yard looking absolutely schmick. Best service in the local area."</p>
-        <div class="stars">⭐⭐⭐⭐⭐ Top Google Rated Local Service</div>
+    <!-- Social Proof Trust Section -->
+    <section class="trust-box">
+        <p>"Justin always shows up exactly on time and leaves our entire yard looking completely flawless. Best pricing and service in the area."</p>
+        <div class="stars">⭐⭐⭐⭐⭐ 5-STAR LOCAL GOOGLE RATING</div>
     </section>
 
-    <!-- Store Info Footer -->
+    <!-- Professional Footer -->
     <footer>
-        <p>📍 Operating Services Across Local Suburbs</p>
-        <p>⏰ Open 7:00 AM - 9:00 PM | Mon - Sun</p>
-        <p style="margin-top: 20px; font-size: 0.8rem;">Concept Layout Designed by Your Name.</p>
+        <p>📍 Proudly Servicing Your Local Neighborhoods</p>
+        <p style="margin-top: 10px;">⏰ Monday - Sunday: 7:00 AM - 9:00 PM</p>
+        <p style="margin-top: 35px; font-size: 0.8rem; color: #30363d;">Concept Portfolio Layout Created by Your Name.</p>
     </footer>
 
 </body>
